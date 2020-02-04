@@ -1,1 +1,37 @@
 Week of 1-3-20
+
+1-3-20
+
+JavaScript 
+    loosly and dynamiclly typed
+    uses types implicity
+    Will make choices on working with two types 
+
+Python
+    strongly and dynamically typed 
+    will not work on two types
+
+JS stings
+    'one quote'
+    "double quotes"
+    `backtick
+    backtick`
+
+JS variable types
+    const - value does not change. Cannot change unless change with const
+
+    let - variable assignment 
+
+    var - variableassigment that gets hoisted 
+
+JS variable names
+    start with letters
+    uses other charcters after
+    use camelCase 
+
+JS booleans
+    Truthy - Falsy
+    many operators are Falsy (look up) all others are Truthy
+
+    logiical and - &&
+    logical or - || 
