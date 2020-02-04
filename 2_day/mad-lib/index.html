@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dragon</title>
+</head>
+<style>
+html {
+    box-sizing: border-box;
+    /* 16px is the default for most browsers */
+    font-size: 16px;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+body {
+    background: url("../images/dragon.jpg") no-repeat center center fixed;
+    background-size: cover;
+    
+}
+.wrapper{
+    max-width: 640px;
+    margin: 5% auto;
+    padding: 1% 2% 4%;
+    background: #2F2E37D9;
+    color: #ffffff;
+}
+
+p {
+    margin: 4% auto;
+}
+
+span {
+    display: inline-block;
+    background-color: grey;
+    padding: 0 auto;
+    min-width: 70px;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin: 2% auto;
+}
+button {
+    margin: 2% auto;
+}
+</style>
+<body>
+    <div class="wrapper">
+        <h1>DragonLibs</h1>
+        <p>
+            The <span id="color">color</span> Dragon is the <span id="sup">Superlitive ending in est</span> Dragon of all. It has <span id="adj1">adjective</span> <span id="body1">body parts</span>, and a <span id="body2">body part</span> shaped like a <span id="noun">noun</span>. It loves to eat <span id="animal">animal </span>, although it will feast on nearly anything. It is <span id="adj2">adjective</span> and <span id="adj3">adjective </span>. You must be <span id="adj4">adjective</span> around it, 
+            or you may end up as it`s meal!
+        </p>
+        <form>
+            <label>Color: 
+                <input type="text" id="colorInput" value=" " >
+            </label>
+            <label>Superlative ending in "est": 
+                <input type="text" id="superInput" value=" " >
+            </label>
+            <label>Adjective: 
+                <input type="text" id="adj1Input" value=" " >
+            </label>
+            <label>Body Parts (Plural): 
+                <input type="text" id="body1Input" value=" " >
+            </label>
+            <label>Body Part: 
+                <input type="text" id="body2Input" value=" " >
+            </label>
+            <label>Noun: 
+                <input type="text" id="nounInput" value=" " >
+            </label>
+            <label>Animal (Plural): 
+                <input type="text" id="animalInput" value=" " >
+            </label>
+            <label>Adjective: 
+                <input type="text" id="adj2Input" value=" " >
+            </label>
+            <label>Adjective: 
+                <input type="text" id="adj3Input" value=" " >
+            </label>
+            <label>Adjective: 
+                <input type="text" id="adj4Input" value=" " >
+            </label>
+            <button type="button" id="makeMadlibsButtom">Go Mad!</button>
+        </form>
+    </div>
+</body>
+<script>
+    
+const makeMadlibsButtom = document.getElementById("makeMadlibsButtom");
+const madlibsTexts = document.querySelectorAll('span');
+const madlibsInputs = document.querySelectorAll('input');
+
+makeMadlibsButtom.addEventListener('click', function(e){
+    e.preventDefault();
+    for (let i = 0; i < madlibsTexts.length; i++){
+        madlibsTexts[i].innerHTML = madlibsInputs[i].value;
+    }
+});
+
+// const colorInput = document.getElementById("colorInput");
+// const superInput = document.getElementById("superInput");
+// const adj1Input = document.getElementById("adj1Input");
+// const body1Input = document.getElementById("body1Input");
+// const body2Input = document.getElementById("body2Input");
+// const nounInput = document.getElementById("nounInput");
+// const animalInput = document.getElementById("animalInput");
+// const adj2Input = document.getElementById("adj2Input");
+// const adj3Input = document.getElementById("adj3Input");
+// const adj4Input = document.getElementById("adj4Input");
+
+// const color = document.getElementById("color");
+// const sup = document.getElementById("sup");
+// const adj1 = document.getElementById("adj1");
+// const body1 = document.getElementById("body1");
+// const body2 = document.getElementById("body2");
+// const noun = document.getElementById("noun");
+// const animal = document.getElementById("animal");
+// const adj2 = document.getElementById("adj2");
+// const adj3 = document.getElementById("adj3");
+// const adj4 = document.getElementById("adj4");
+
+// madButtom.addEventListener('click', function(e){
+//     e.preventDefault();
+//     color.innerHTML = colorInput.value;
+//     sup.innerHTML = superInput.value;
+//     adj1.innerHTML = adj1Input.value;
+//     body1.innerHTML = body1Input.value;
+//     body2.innerHTML = body2Input.value;
+//     noun.innerHTML = nounInput.value;
+//     animal.innerHTML = animalInput.value;
+//     adj2.innerHTML = adj2Input.value;
+//     adj3.innerHTML = adj3Input.value;
+//     adj4.innerHTML = adj4Input.value;
+// });
+// query selector all
+</script>
+</html>

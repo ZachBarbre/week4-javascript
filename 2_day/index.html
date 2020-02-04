@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM Starter Kit</title>
+</head>
+<body>
+    <p id="helloWorld">helloWorld</p>
+    <form>
+        <label>Your Name
+            <input type="text" id="userInput" value=""/>
+        </label>
+        <button type="button" id="clickMe">Click Me</button>
+    </form>
+</body>
+<script>
+    const myButton = document.getElementById("clickMe");
+    const myText = document.getElementById("helloWorld");
+    const myInput = document.getElementById("userInput");
+
+    myButton.addEventListener('click', function(e){
+        e.preventDefault();
+        console.log('Clicked');
+        myText.innerHTML = `Hello, ${myInput.value}`
+    });
+    </script>
+</html>
