@@ -35,3 +35,9 @@ JS booleans
 
     logiical and - &&
     logical or - || 
+
+JS functions can assign the return to a variable 
+
+JS is event driven
+
+JS is single thread and async
