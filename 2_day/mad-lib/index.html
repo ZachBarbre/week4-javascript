@@ -1,5 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -42,6 +70,7 @@ h1 {
 
 p {
     margin: 4% auto;
+    display: none;
 }
 
 span {
@@ -70,7 +99,7 @@ button {
 <body>
     <div class="wrapper">
         <h1>DragonLibs</h1>
-        <p>
+        <p id='madlib'>
             The <span>color</span> Dragon is the <span>Superlitive ending in est</span> Dragon of all. It has <span>adjective</span> <span >body parts</span>, and a <span>body part</span> shaped like a <span>noun</span>. It loves to eat <span>animal </span>, although it will feast on nearly anything. It is <span>adjective</span> and <span>adjective </span>. You must be <span>adjective</span> around it, 
             or you may end up as it`s meal!
         </p>
@@ -112,37 +141,51 @@ button {
 </body>
 <script>
 
-const makeMadlibsButton = document.querySelectorAll("#mad");
-const makeResetButton = document.querySelectorAll("#mad");
+const makeMadlibsButton = document.getElementById('mad');
+const makeResetButton = document.getElementById('reset');
 const madlibsTexts = document.querySelectorAll('span');
 const madlibsInputs = document.querySelectorAll('input');
-// const madlibsTextOriginal = ['color', 'Superlitive ending is est', 'adjective', 'body parts', 'body part', 'noun', 'animal', 'adjective', 'adjective', 'adjective']
-const madlibsTextOriginal = []
-const madlibsInputsValues = []
+const madlibsTextOriginal = creatOriginalEntriesArray(madlibsTexts);
+const madlibsParagraph = document.getElementById('madlib');
+console.log(madlibsTextOriginal)
 
-function creatOriginalEntries(){
-    madlibsTexts.forEach(function(text){
-        madlibsTextOriginal.push(text.innerHTML);
+function creatOriginalEntriesArray(inputNodelists){
+    const inputsArray = []
+    inputNodelists.forEach(function(nodelist){
+        inputsArray.push(nodelist.innerHTML);
     })
+    return inputsArray
 }
-
-creatOriginalEntries()
+function createInputValueArray(inputValueNodelist){
+    const inputsArray= []
+    inputValueNodelist.forEach(function(inputValue){
+        inputsArray.push(inputValue.value);
+    });
+    return inputsArray
+}
+function updateText(textNodelist, inputArray){
+    textNodelist.forEach(function(text, index){
+        text.innerHTML = inputArray[index];
+    });
+}
+function clearInputs(inputNodelists){
+    inputNodelists.forEach(function(nodelist){
+        nodelist.value=''
+    });
+}
 
 makeMadlibsButton.addEventListener('click', function(event){
     event.preventDefault();
-    madlibsTexts.forEach(function(text, index){
-        text.innerHTML = madlibsInputs[index].value;
-    })
+    const madlibsInputsValues = createInputValueArray(madlibsInputs);
+    updateText(madlibsTexts, madlibsInputsValues);
+    madlibsParagraph.style.display ='block';
 });
 
-makeResetButtons.addEventListener('click', function(event){
+makeResetButton.addEventListener('click', function(event){
     event.preventDefault();
-    madlibsInputs.forEach(function(input){
-        input.value=''
-    });
-    madlibsTexts.forEach(function(text, index){
-        text.innerHTML = madlibsTextOriginal[index]
-    });
+    clearInputs(madlibsInputs);
+    updateText(madlibsTexts,madlibsTextOriginal);
+    
 });
 
 </script>
