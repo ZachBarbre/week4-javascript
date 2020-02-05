@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Dragon</title>
+    <link href="https://fonts.googleapis.com/css?family=Jim+Nightshade|Open+Sans&display=swap" rel="stylesheet">
 </head>
 <style>
 html {
@@ -21,7 +22,7 @@ html {
 body {
     background: url("../images/dragon.jpg") no-repeat center center fixed;
     background-size: cover;
-    
+    font-family: 'Open Sans', sans-serif;
 }
 .wrapper{
     max-width: 640px;
@@ -29,6 +30,14 @@ body {
     padding: 1% 2% 4%;
     background: #2F2E37D9;
     color: #ffffff;
+    border-radius: 5%;
+}
+
+h1 {
+    font-family:'Jim Nightshade', cursive;
+    font-size: 3rem;
+    margin: 5px auto 2% auto;
+    text-align: center;
 }
 
 p {
@@ -40,70 +49,100 @@ span {
     background-color: grey;
     padding: 0 auto;
     min-width: 70px;
+    min-height: 18px;
     text-align: center;
+    border-bottom: lightgrey solid 2px;
 }
 
 label {
     display: block;
     margin: 2% auto;
+
 }
 button {
-    margin: 2% auto;
+    margin: 2% 1%;
+    background-color: lightgray;
+    color: black;
+    border-radius: 15%;
+    font-size: 0.8rem;
 }
 </style>
 <body>
     <div class="wrapper">
         <h1>DragonLibs</h1>
         <p>
-            The <span id="color">color</span> Dragon is the <span id="sup">Superlitive ending in est</span> Dragon of all. It has <span id="adj1">adjective</span> <span id="body1">body parts</span>, and a <span id="body2">body part</span> shaped like a <span id="noun">noun</span>. It loves to eat <span id="animal">animal </span>, although it will feast on nearly anything. It is <span id="adj2">adjective</span> and <span id="adj3">adjective </span>. You must be <span id="adj4">adjective</span> around it, 
+            The <span>color</span> Dragon is the <span>Superlitive ending in est</span> Dragon of all. It has <span>adjective</span> <span >body parts</span>, and a <span>body part</span> shaped like a <span>noun</span>. It loves to eat <span>animal </span>, although it will feast on nearly anything. It is <span>adjective</span> and <span>adjective </span>. You must be <span>adjective</span> around it, 
             or you may end up as it`s meal!
         </p>
         <form>
             <label>Color: 
-                <input type="text" id="colorInput" value=" " >
+                <input type="text" id="colorInput" value="" >
             </label>
             <label>Superlative ending in "est": 
-                <input type="text" id="superInput" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Adjective: 
-                <input type="text" id="adj1Input" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Body Parts (Plural): 
-                <input type="text" id="body1Input" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Body Part: 
-                <input type="text" id="body2Input" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Noun: 
-                <input type="text" id="nounInput" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Animal (Plural): 
-                <input type="text" id="animalInput" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Adjective: 
-                <input type="text" id="adj2Input" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Adjective: 
-                <input type="text" id="adj3Input" value=" " >
+                <input type="text"  value="" >
             </label>
             <label>Adjective: 
-                <input type="text" id="adj4Input" value=" " >
+                <input type="text"  value="" >
             </label>
-            <button type="button" id="makeMadlibsButtom">Go Mad!</button>
+            <button id='mad' type="button">Go Mad!</button>
+            <button id='reset' type="button">Reset</button>
         </form>
     </div>
 </body>
 <script>
 
-const makeMadlibsButtom = document.getElementById("makeMadlibsButtom");
+const makeMadlibsButton = document.querySelectorAll("#mad");
+const makeResetButton = document.querySelectorAll("#mad");
 const madlibsTexts = document.querySelectorAll('span');
 const madlibsInputs = document.querySelectorAll('input');
+// const madlibsTextOriginal = ['color', 'Superlitive ending is est', 'adjective', 'body parts', 'body part', 'noun', 'animal', 'adjective', 'adjective', 'adjective']
+const madlibsTextOriginal = []
+const madlibsInputsValues = []
 
-makeMadlibsButtom.addEventListener('click', function(e){
-    e.preventDefault();
-    for (let i = 0; i < madlibsTexts.length; i++){
-        madlibsTexts[i].innerHTML = madlibsInputs[i].value;
-    }
+function creatOriginalEntries(){
+    madlibsTexts.forEach(function(text){
+        madlibsTextOriginal.push(text.innerHTML);
+    })
+}
+
+creatOriginalEntries()
+
+makeMadlibsButton.addEventListener('click', function(event){
+    event.preventDefault();
+    madlibsTexts.forEach(function(text, index){
+        text.innerHTML = madlibsInputs[index].value;
+    })
+});
+
+makeResetButtons.addEventListener('click', function(event){
+    event.preventDefault();
+    madlibsInputs.forEach(function(input){
+        input.value=''
+    });
+    madlibsTexts.forEach(function(text, index){
+        text.innerHTML = madlibsTextOriginal[index]
+    });
 });
 
 </script>
