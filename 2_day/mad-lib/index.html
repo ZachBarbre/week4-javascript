@@ -113,13 +113,14 @@ button {
 </body>
 <script>
 
+'use strict';
+
 const makeMadlibsButton = document.getElementById('mad');
 const makeResetButton = document.getElementById('reset');
 const madlibsTexts = document.querySelectorAll('span');
 const madlibsInputs = document.querySelectorAll('input');
 const madlibsTextOriginal = creatOriginalEntriesArray(madlibsTexts);
 const madlibsParagraph = document.getElementById('madlib');
-console.log(madlibsTextOriginal)
 
 function creatOriginalEntriesArray(inputNodelists){
     const inputsArray = []

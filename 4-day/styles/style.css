@@ -1,0 +1,45 @@
+html {
+    box-sizing: border-box;
+    /* 16px is the default for most browsers */
+    font-size: 16px;
+  }
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  }
+
+body {
+  background: url(../images/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+}
+
+form {
+  align-self: flex-start;
+  min-width:300px;
+}
+
+label {
+  display: block;
+  margin: 2%;
+}
+
+.wrapper {
+  max-width: 640px;
+  margin: 2% auto;
+  background-color: #E5E6E5D9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  }
+
+.shoppingButton {
+  width: 150px;
+  font-size: 1.1rem;
+  background-color: lightgreen;
+  border-radius: 10%;
+  margin: 3%;
+  
+}
