@@ -111,34 +111,108 @@
 // console.log(removeDuplicates(arr1));
 
 // 10
-function sumArrayItemsAtIndex(arr1, arr2){
-    let sumArray = [];
-    const longerArray = setOnArrayLength(arr1, arr2);
-    const shorterArray = setOnArrayLength(arr2, arr1);
+// function sumArrayItemsAtIndex(arr1, arr2){
+//     let sumArray = [];
+//     const longerArray = setOnArrayLength(arr1, arr2);
+//     const shorterArray = setOnArrayLength(arr2, arr1);
     
-    sumArray = longerArray.map(function(longerItem, index){
-        if (shorterArray[index] === undefined){
-            return longerItem;
-        }
-        else{
-            return longerItem + shorterArray[index];
-        }
-    })
-    return sumArray;
+//     sumArray = longerArray.map(function(longerItem, index){
+//         if (shorterArray[index] === undefined){
+//             return longerItem;
+//         }
+//         else{
+//             return longerItem + shorterArray[index];
+//         }
+//     })
+//     return sumArray;
+// }
+
+// function setOnArrayLength(arr1, arr2){
+//     if (arr1.length >= arr2.length){
+//         console.log(arr1);
+//         return arr1;
+//     }
+//     else {
+//         console.log(arr2);
+//         return arr2;
+//     }
+// }
+
+// const array1 = [1,0,2,3,4];
+// const array2 = [3,5,6,7,8,13];
+
+// console.log(sumArrayItemsAtIndex(array1,array2));
+
+// 11
+
+// function removeFalsy(arr){
+//     let answerArray = [];
+//     arr.forEach(function(item){
+//         if (item) {
+//             answerArray.push(item);
+//         }
+//     });
+//     return answerArray;
+// }
+
+// const arr = [NaN, 0, 15, false, -22, '',undefined, 47, null];
+// console.log(removeFalsy(arr));
+
+// 12
+
+// function mergeAndRemoveDups(arr1, arr2){
+//     answerArray = arr1;
+//     arr2.forEach(function(item, index){
+//         if (arr1.includes(item)){
+
+//         }
+//         else {
+//             answerArray.push(item);
+//         }
+//     });
+//     return answerArray;
+// }
+
+// const arr1 = [1, 2, 3];
+// const arr2 = [2, 30, 1];
+// console.log(mergeAndRemoveDups(arr1, arr2));
+
+//13
+
+// function double(arr){
+//     return arr.map(item => item*2);
+// }
+
+// const arr = [1,2,3];
+// console.log(double(arr));
+
+// 14
+
+// function makeArrayString(arr){
+//     return arr.map(item => item.toString());
+// }
+
+// console.log(makeArrayString([1,2,3]));
+
+// 15
+
+// function capitalizeNames(arr){
+//     return arr.map(item => item = item[0].toUpperCase()  + item.substring(1));
+// }
+
+// const arr1 = ['jim', 'joe', 'kira', 'zach']
+
+// console.log(capitalizeNames(arr1));
+
+// 16
+
+function lessThanFive(arr){
+    return arr.filter(item => item.length < 5);
 }
 
-function setOnArrayLength(arr1, arr2){
-    if (arr1.length >= arr2.length){
-        console.log(arr1);
-        return arr1;
-    }
-    else {
-        console.log(arr2);
-        return arr2;
-    }
-}
+const arr = ["Sometimes", "I", "give", "myself", "the", "creeps", "Sometimes", "my", "mind","plays", "tricks", "on", "me",
+"It", "all", "keeps", "adding", "up",
+"I", "think", "I'm", "cracking", "up",
+"Am", "I", "just", "paranoid?",];
 
-const array1 = [1,0,2,3,4];
-const array2 = [3,5,6,7,8,13];
-
-console.log(sumArrayItemsAtIndex(array1,array2));
+console.log(lessThanFive(arr));
